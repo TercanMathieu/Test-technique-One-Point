@@ -14,12 +14,12 @@ type AddElementAction = {
 
 type DeleteElementAction = {
   type: typeof DELETE_ELEMENT;
-  payload: number;
+  payload: string;
 };
 
 type ChangeStateElementAction = {
   type: typeof CHANGE_STATE_ELEMENT;
-  payload: number;
+  payload: string;
 };
 export type ElementActionTypes =
   | AddElementAction

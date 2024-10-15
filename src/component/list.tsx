@@ -20,11 +20,11 @@ function List() {
     }
   };
 
-  const deleteString = (id: number) => {
+  const deleteString = (id: string) => {
     dispatch({ type: DELETE_ELEMENT, payload: id });
   };
 
-  const changeState = (id: number) => {
+  const changeState = (id: string) => {
     dispatch({ type: CHANGE_STATE_ELEMENT, payload: id });
   };
 
@@ -33,15 +33,14 @@ function List() {
       <ul className="list">
         {elements.map((el: TodoElement, key: number) => (
           <div className="item" key={key}>
-            <label className="checkbox-container">
               <input
                 type="checkbox"
                 checked={el.completed}
                 onChange={() => changeState(el.id)}
               />
-              <span className="checkmark"></span>
+              <label className="checkbox-container" >
+                {el.text}
             </label>
-            <li>{el.text}</li>
             <button onClick={() => deleteString(el.id)}>delete</button>
           </div>
         ))}
