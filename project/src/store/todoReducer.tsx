@@ -1,8 +1,10 @@
+import { TodoList } from '../component/type';
+import { ElementActionTypes } from './type';
+
 
 export const ADD_ELEMENT = 'ADD_ELEMENT';
 export const DELETE_ELEMENT = 'DELETE_ELEMENT'
-import { TodoList, Todo } from '../component/type';
-import { Action, ElementActionTypes } from './type';
+
 export const CHANGE_STATE_ELEMENT = 'CHANGE_STATE_ELEMENT';
 let id: number = 0;
 
