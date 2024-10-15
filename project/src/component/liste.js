@@ -1,42 +1,26 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { ADD_ELEMENT, DELETE_ELEMENT } from '../store/todoReducer';
-import './liste.css'
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_1 = require("react");
+const react_redux_1 = require("react-redux");
+const todoReducer_1 = require("../store/todoReducer");
+require("./liste.css");
 function Liste() {
-  const [text, setText] = useState('');
-  const elements = useSelector((state) => state.elements || []); 
-  const dispatch = useDispatch(); 
-  const addString = () => {
-    if (text.trim()) {
-      dispatch({ type: ADD_ELEMENT, payload: text }); 
-      setText('');
-    }
-  };
-
-  const deleteString = (id) => {
-      dispatch({ type: DELETE_ELEMENT, payload: id }); 
-  };
-
-  return (
-    <div className="container">
-  <ul className='list'>
-    {elements.map((el, key) => (
-      <div className="item" key={key}>
-        <li>{el.text}</li>
-        <button onClick={() => deleteString(el.id)}>delete</button>
-      </div>
-    ))}
-  </ul>
-    <div className="input-container">
-    <input
-      type="text"
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-    />
-    <button onClick={addString}>Ajouter</button>
-  </div>
-</div>
-  );
+    const [text, setText] = (0, react_1.useState)('');
+    const elements = (0, react_redux_1.useSelector)((state) => state.elements || []);
+    const dispatch = (0, react_redux_1.useDispatch)();
+    const addString = () => {
+        if (text.trim()) {
+            dispatch({ type: todoReducer_1.ADD_ELEMENT, payload: { text, completed: false } });
+            setText('');
+        }
+    };
+    const deleteString = (id) => {
+        dispatch({ type: todoReducer_1.DELETE_ELEMENT, payload: id });
+    };
+    const changeState = (id) => {
+        dispatch({ type: todoReducer_1.CHANGE_STATE_ELEMENT, payload: id });
+    };
+    return ((0, jsx_runtime_1.jsxs)("div", { className: "container", children: [(0, jsx_runtime_1.jsx)("ul", { className: "list", children: elements.map((el, key) => ((0, jsx_runtime_1.jsxs)("div", { className: "item", children: [(0, jsx_runtime_1.jsxs)("label", { className: "checkbox-container", children: [(0, jsx_runtime_1.jsx)("input", { type: "checkbox", checked: el.completed, onChange: () => changeState(el.id) }), (0, jsx_runtime_1.jsx)("span", { className: "checkmark" })] }), (0, jsx_runtime_1.jsx)("li", { children: el.text }), (0, jsx_runtime_1.jsx)("button", { onClick: () => deleteString(el.id), children: "delete" })] }, key))) }), (0, jsx_runtime_1.jsxs)("div", { className: "input-container", children: [(0, jsx_runtime_1.jsx)("input", { type: "text", value: text, onChange: (e) => setText(e.target.value), placeholder: "Enter text" }), (0, jsx_runtime_1.jsx)("button", { onClick: addString, children: "Ajouter" })] })] }));
 }
-
-export default Liste;
+exports.default = Liste;
