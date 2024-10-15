@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f4f8; 
+  background-color: #f0f4f8;
   margin: 0;
   padding: 0;
 }
@@ -28,7 +28,7 @@ body {
   background-color: white;
   padding: 10px 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
 }
 
@@ -58,7 +58,7 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px; 
+  gap: 10px;
   margin-top: 20px;
 }
 
@@ -87,7 +87,7 @@ input[type="text"]:focus {
 }
 
 button {
-  background-color: #4a90e2; 
+  background-color: #4a90e2;
   color: white;
   padding: 10px 15px;
   border-radius: 5px;
@@ -98,5 +98,5 @@ button {
 }
 
 button:hover {
-  background-color: #357ab7; 
+  background-color: #357ab7;
 }

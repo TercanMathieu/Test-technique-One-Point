@@ -1,9 +1,9 @@
-export type Todo = {
- id: number,
- text: string,
- completed: boolean
-}
+export type TodoElement = {
+  id: number;
+  text: string;
+  completed: boolean;
+};
 
-export type TodoList = {
-    elements: Todo[]
-}
+export type RootState = {
+  elements: TodoElement[];
+};

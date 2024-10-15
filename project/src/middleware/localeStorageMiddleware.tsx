@@ -1,11 +1,11 @@
+import { Middleware } from "redux";
+import { RootState } from "../component/type";
 
-import { Middleware } from 'redux';
 
+export const saveToLocalStorageMiddleware: Middleware<{},RootState> = store => next => (action: any) => {
+    const result = next(action);
+    const state = store.getState();
 
-export const saveToLocalStorageMiddleware: Middleware<{}> = store => next => (action: any) => { // a changer le any
-  const result = next(action); 
-  const state = store.getState();
-
-  localStorage.setItem('list', JSON.stringify(state.elements));
-  return result;
-};
+    localStorage.setItem('list', JSON.stringify(state.elements));
+    return result;
+  };

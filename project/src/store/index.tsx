@@ -1,8 +1,9 @@
-import { createStore, applyMiddleware } from 'redux';
-import { saveToLocalStorageMiddleware } from '../middleware/localeStorageMiddleware'; 
-import { elementReducer } from './todoReducer';
+import {configureStore} from '@reduxjs/toolkit'
+import { saveToLocalStorageMiddleware } from "../middleware/localeStorageMiddleware";
+import { elementReducer } from "./todoReducer";
 
-export default createStore(
-  elementReducer,
-  applyMiddleware(saveToLocalStorageMiddleware) 
+export default configureStore( {
+ reducer: elementReducer,
+ middleware: getDefaultMiddleware => getDefaultMiddleware().concat(saveToLocalStorageMiddleware),
+}
 );

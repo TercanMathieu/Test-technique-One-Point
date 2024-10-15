@@ -1,15 +1,14 @@
-import Liste from './component/liste';
-import { Provider } from 'react-redux';
-import store from './store/index'
-import React from 'react';
+import List from "./component/list";
+import { Provider } from "react-redux";
+import store from "./store/index";
+import React from "react";
 
-function App() { 
+function App() {
   return (
     <Provider store={store}>
-      <Liste/>
+      <List />
     </Provider>
-
   );
-};
+}
 
 export default App;
